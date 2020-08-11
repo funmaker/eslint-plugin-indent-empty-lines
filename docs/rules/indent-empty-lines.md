@@ -32,14 +32,14 @@ function foo() {
 ```typescript
 type Options = "tab" | number;
 
-const defaultOptions: Options = 0;
+const defaultOptions: Options = 2;
 ```
 
 This rule accepts `integer` or `"tab"` string as option. It's a hint used in determining proper indent when
 it can't be inferred from the lines around. If `"tab"` then indent is interpreted as tab character, otherwise
 multiply of spaces is used.
 
-Bu default 0 spaces is used.
+Bu default `2` spaces are used.
 
 ## When Not To Use It
 
