@@ -5,7 +5,7 @@ const rule = require("../../../lib/rules/indent-empty-lines"),
 
 const validCode = `
 function foo() {
-  const ret = null;
+  var ret = null;
   
   return ret;
 }
@@ -13,7 +13,7 @@ function foo() {
 
 const invalidCode = `
 function foo() {
-  const ret = null;
+  var ret = null;
 
   return ret;
 }
@@ -27,9 +27,10 @@ ruleTester.run("indent-empty-lines", rule, {
         {
             code: invalidCode,
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
+                message: "Empty line not indented correctly. (expected 2 spaces, found 0)",
+                type: "Program"
+            }],
+            output: validCode
         }
     ]
 });
