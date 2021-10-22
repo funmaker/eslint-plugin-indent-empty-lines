@@ -3,7 +3,7 @@
 const rule = require("../../../lib/rules/indent-empty-lines"),
       RuleTester = require("eslint").RuleTester;
 
-const validCode = `
+const validCodeWithSpaces = `
 function foo() {
   var ret = null;
   
@@ -11,7 +11,15 @@ function foo() {
 }
 `;
 
-const invalidCode = `
+const validCodeWithTabs = `
+function foo() {
+	var ret = null;
+	
+	return ret;
+}
+`;
+
+const invalidCodeWithSpaces = `
 function foo() {
   var ret = null;
 
@@ -19,18 +27,43 @@ function foo() {
 }
 `;
 
+const invalidCodeWithTabs = `
+function foo() {
+	var ret = null;
+
+	return ret;
+}
+`;
+
 const ruleTester = new RuleTester();
 ruleTester.run("indent-empty-lines", rule, {
-    valid: [validCode],
-
+    valid: [
+        {
+            code: validCodeWithSpaces,
+        },
+        {
+            code: validCodeWithTabs,
+            options: ["tab"],
+        },
+    ],
+    
     invalid: [
         {
-            code: invalidCode,
+            code: invalidCodeWithSpaces,
             errors: [{
                 message: "Empty line not indented correctly. (expected 2 spaces, found 0)",
-                type: "Program"
+                type: "Program",
             }],
-            output: validCode
-        }
-    ]
+            output: validCodeWithSpaces,
+        },
+        {
+            code: invalidCodeWithTabs,
+            options: ["tab"],
+            errors: [{
+                message: "Empty line not indented correctly. (expected 1 tabs, found 0)",
+                type: "Program",
+            }],
+            output: validCodeWithTabs,
+        },
+    ],
 });
