@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-indent-empty-lines",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enforce indention on empty lines",
   "main": "lib/index.js",
   "scripts": {
