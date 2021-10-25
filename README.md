@@ -4,16 +4,16 @@ Enforce indention on empty lines
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
+First, you'll need to install [ESLint](http://eslint.org):
 
 ```
-$ npm i eslint --save-dev
+$ npm install --save-dev eslint
 ```
 
 Next, install `eslint-plugin-indent-empty-lines`:
 
 ```
-$ npm install eslint-plugin-indent-empty-lines --save-dev
+$ npm install --save-dev eslint-plugin-indent-empty-lines
 ```
 
 

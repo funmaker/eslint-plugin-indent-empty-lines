@@ -1,11 +1,11 @@
-# Enforce indention on empty lines (indent-empty-lines)
+# Enforce indentation on empty lines (indent-empty-lines)
 
 Indentation of empty lines can be useful when moving parts of your code.
 
 
 ## Rule Details
 
-This rule allows you to enforce indention on empty lines.
+This rule allows you to enforce indentation on empty lines.
 
 Examples of **incorrect** code for this rule:
 
@@ -35,9 +35,9 @@ type Options = "tab" | number;
 const defaultOptions: Options = 2;
 ```
 
-This rule accepts `integer` or `"tab"` string as option. It's a hint used in determining proper indent when
-it can't be inferred from the lines around. If `"tab"` then indent is interpreted as tab character, otherwise
-multiply of spaces is used.
+This rule accepts `integer` or `"tab"` string as option. It's a hint used to determine proper indent in case
+it can't be inferred from the lines around. If `"tab"` is specified then indent is assumed to use a single
+tab character for each indentation level, otherwise it is assumed to use given multiply of spaces.
 
 Bu default `2` spaces are used.
 
